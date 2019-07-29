@@ -3,6 +3,9 @@ CFLAGS=-std=c++17
 
 INCLUDECADMIUM=-I lib
 
+bin_directroy := $(shell mkdir -p bin)
+build_directroy := $(shell mkdir -p build)
+
 all: message.o main.o receiver.o sender.o subnet.o
 	$(CC) -g -o bin/ABP build/main.o build/message.o
 	$(CC) -g -o bin/RECEIVER_TEST build/receiver.o build/message.o 
