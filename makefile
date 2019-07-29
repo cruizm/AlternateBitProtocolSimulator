@@ -8,10 +8,10 @@ build_folder := $(shell mkdir -p build)
 bin_folder := $(shell mkdir -p bin)
 
 all: main.o ../build/message.o 
-	$(CC) -g -o bin/MAIN_ABP build/top_model_main.o build/message.o
-	$(CC) -g -o bin/RECEIVER build/receiver_main.o build/message.o
-	$(CC) -g -o bin/SENDER build/sender_main.o build/message.o
-	$(CC) -g -o bin/SUBNET build/subnet_main.o build/message.o
+	$(CC) -g -o bin_folder/MAIN_ABP build/top_model_main.o build/message.o
+	$(CC) -g -o bin_folder/RECEIVER build/receiver_main.o build/message.o
+	$(CC) -g -o bin_folder/SENDER build/sender_main.o build/message.o
+	$(CC) -g -o bin_folder/SUBNET build/subnet_main.o build/message.o
 
 main.o: src/top_model/main.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) src/top_model/main.cpp -o build/top_model_main.o
