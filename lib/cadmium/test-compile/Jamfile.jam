@@ -1,0 +1,2 @@
+build-project compiles ;
+build-project compile-fails ;
