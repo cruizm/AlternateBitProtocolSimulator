@@ -27,8 +27,8 @@
 #ifndef CADMIUM_IESTREAM_HPP
 #define CADMIUM_IESTREAM_HPP
 
-#include <cadmium/modeling/ports.hpp>
-#include <cadmium/modeling/message_bag.hpp>
+#include <../cadmium/modeling/ports.hpp>
+#include <../cadmium/modeling/message_bag.hpp>
 #include <limits>
 
 #include <stddef.h>

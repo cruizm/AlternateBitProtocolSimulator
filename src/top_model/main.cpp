@@ -14,14 +14,14 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../vendor/NDTime.hpp"
-#include "../vendor/iestream.hpp"
+#include "../../lib/vendor/NDTime.hpp"
+#include "../../lib/vendor/iestream.hpp"
 
-#include "../data_structures/message.hpp"
+#include "../../include/data_structures/message.hpp"
 
-#include "../atomics/senderCadmium.hpp"
-#include "../atomics/receiverCadmium.hpp"
-#include "../atomics/subnetCadmium.hpp"
+#include "../../includeatomics/senderCadmium.hpp"
+#include "../../includeatomics/receiverCadmium.hpp"
+#include "../../includeatomics/subnetCadmium.hpp"
 
 
 using namespace std;

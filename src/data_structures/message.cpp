@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 
-#include "message.hpp"
+#include "../../include/data_structures/message.hpp"
 
 /***************************************************/
 /************* Output stream ************************/
