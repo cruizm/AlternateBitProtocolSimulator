@@ -3,9 +3,9 @@ CFLAGS=-std=c++17
 
 INCLUDECADMIUM=-I lib/cadmium/include
 
-build_folder = mkdir -p build
+build_folder := $(shell mkdir -p build)
 
-bin_folder = mkdir -p bin
+bin_folder := $(shell mkdir -p bin)
 
 all: main.o ../build_folder/message.o 
 	$(CC) -g -o bin_folder/MAIN_ABP build_folder/top_model_main.o build_folder/message.o
