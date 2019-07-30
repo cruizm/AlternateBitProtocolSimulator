@@ -6,47 +6,68 @@ This folder contains a simulator for an ALTERNATE BIT PROTOCOL implemented in Ca
 
 README.txt	
 
-alternatebitprotocol.doc
+bin - It contains all the executable(.exe) files and is created during the execution phase.
 
-atomics [This folder contains the header files]
-	receiverCadmium.hpp
-	senderCadmium.hpp
-	subnetCadmium.hpp
+build - It contains all the object(.o) files and is also created during the execution phase.
 
-data_structures [This folder contains the data structures used in the project]
-	message.hpp
-	message.cpp
+data - This folder has the input and output files for the simulator.
+		abp_output_0.txt
+		abp_output_1.txt
+		input_abp_0.txt
+		input_abp_1.txt
+	
 
-test [This folder the unit test for the different include files]
-	receiver [This folder contains the unit test of the receiver]
-		main.cpp
-		makefile
-		receiver_input_test.txt
-		receiver_test_output.txt
-	sender [This folder contains the unit test of the sender]
-		main.cpp
-		makefile
-		sender_input_test_ack_In.txt
-		sender_input_test_control_In.txt
-		sender_test_output.txt
-	subnet [This folder contains the unit test of the subnet]
-		main.cpp
-		makefile
-		subnet_input_test.txt
-		subnet_test_output.txt
+doc - This folder contains extra documentation other than README.txt
+		alternatebitprot.pdf
+		Cadmium_Documentation_Ubuntu.pdf
+		Cadmium_Windows.pdf
 
-vendor [This folder contains 3rd party header files needed in the project
-	iestream.hpp
-	NDTime.hpp
+include - This folder consists of various header(.hpp) files used in the code.
+			- atomics
+				receiverCadmium.hpp
+				senderCadmium.hpp
+				subnetCadmium.hpp
+			-data_structures
+				message.hpp	
 
-top_model [This folder contains source code for the Alternate Bit Protocol simulator
-some data for testing and some simulator outputs]	
-	main.cpp
-	makefile
-	input_abp_0.txt
-	input_abp_1.txt
-	abp_output_0.txt
-	abp_output_1.txt
+lib - Folder where third-party library files are stored.
+		- cadmium (This folder contains the cadmium (third party) library files)
+		- DESTimes (This folder contains the DESTimes (third party) library files0
+		- vendor (This folder contains vendor (third party) header files)
+			iestream.hpp
+			NDTime.hpp
+	
+src - This folder contains the source files used for the simualator
+		- data_structures (This folder contains the source files for structure of the data)
+			message.cpp
+		- top_model (This folder contains the source files from top_model)
+			main.cpp
+
+test - This folder contains files realted to the unit tests]
+		- data (This folder contains the input and output files for the unit tests)
+			
+			- receiver (This folder contains some data for receiver testing and simulator outputs)
+				receiver_input_test.txt
+				receiver_test_output.txt
+
+			- sender (This folder contains some data for sender testing and simulator outputs)
+				sender_input_test_ack_In.txt
+				sender_input_test_control_In.txt
+				sender_test_output.txt
+
+			- subnet (This folder contains some data for subnet testing and simulator outputs)
+				subnet_input_test.txt
+				subnet_test_output.txt
+
+		- src (This folder contains the source code files for the unit tests)
+			- receiver (This folder contains source code for the receiver)
+				main.cpp
+
+			- sender (This folder contains source code for the sender)
+				main.cpp
+
+			- subnet (This folder contains source code for the subnet)
+				main.cpp
 	
 /*************/
 /****STEPS****/
