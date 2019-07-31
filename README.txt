@@ -6,47 +6,76 @@ This folder contains a simulator for an ALTERNATE BIT PROTOCOL implemented in Ca
 
 README.txt	
 
-alternatebitprotocol.doc
+bin [This folder containes the .exe files which are generated during program execution]
+	src [This folder contains the simulator .exe file]
+		ABP.exe
+	test [This folder contains the test .exe files]
+		SUBNET_TEST.exe
+		SENDER_TEST.exe
+		RECEIVER_TEST.exe
+		
+build [This folder contains .o files which are generated during program execution]
+	src [This folder contains simulator .o files]
+		main.o
+		message.o
+	test [This folder contains the test .o files]
+		subnet
+			main.o
+		sender
+			main.o
+		receiver
+			main.o
+			
+data [This folder contains input data for testing and output files]
+	input_abp_0.txt
+	input_abp_1.txt
+	abp_output.txt
+	
+doc [This folder contains documents related to project]
+	alternatebitprot.pdf
+	Cadmium_Documentation_Ubuntu.pdf
+	Cadmium_Windows.pdf
+		
+include [THis folder contains the header files and data structures]
+	atomics [This folder contains the header files]
+		receiverCadmium.hpp
+		senderCadmium.hpp
+		subnetCadmium.hpp
+	data_structures [This folder contains the data structures used in the project]
+		message.hpp
+		message.cpp
 
-atomics [This folder contains the header files]
-	receiverCadmium.hpp
-	senderCadmium.hpp
-	subnetCadmium.hpp
-
-data_structures [This folder contains the data structures used in the project]
-	message.hpp
-	message.cpp
-
-test [This folder the unit test for the different include files]
-	receiver [This folder contains the unit test of the receiver]
+lib [This folder contains the libraries/dependencies]
+	cadmium [This folder contains cadmium files]
+	DESTimes [This folder contains DESTimes files]
+	vendor [This folder contains 3rd party header files needed in the project]
+		iestream.hpp
+		NDTime.hpp
+		
+src [This folder contains source code for the project]
+	data_structures [This folder contains the data structures used in the project]
+		message.cpp
+	top_model [This folder contains source code for the Alternate Bit Protocol simulator]	
 		main.cpp
-		makefile
+
+test [This folder contains the unit test for the different include files]
+	data
 		receiver_input_test.txt
 		receiver_test_output.txt
-	sender [This folder contains the unit test of the sender]
-		main.cpp
-		makefile
 		sender_input_test_ack_In.txt
 		sender_input_test_control_In.txt
 		sender_test_output.txt
-	subnet [This folder contains the unit test of the subnet]
-		main.cpp
-		makefile
 		subnet_input_test.txt
 		subnet_test_output.txt
+	src
+		receiver [This folder contains the unit test of the receiver]
+			main.cpp
+		sender [This folder contains the unit test of the sender]
+			main.cpp
+		subnet [This folder contains the unit test of the subnet]
+			main.cpp
 
-vendor [This folder contains 3rd party header files needed in the project
-	iestream.hpp
-	NDTime.hpp
-
-top_model [This folder contains source code for the Alternate Bit Protocol simulator
-some data for testing and some simulator outputs]	
-	main.cpp
-	makefile
-	input_abp_0.txt
-	input_abp_1.txt
-	abp_output_0.txt
-	abp_output_1.txt
+makefile
 	
 /*************/
 /****STEPS****/
@@ -55,33 +84,33 @@ some data for testing and some simulator outputs]
 0 - alternatebitprotocol.doc contains the explanation of this simulator
 
 1 - Update include paths in all the makefiles in this folder and subfolders. You need to update the following lines:
-	INCLUDECADMIUM=-I ../../cadmium/include
+	INCLUDECADMIUM=-I lib/cadmium/include
     Update the relative path to cadmium/include from the folder where the makefile is. You need to take into account where you copied the folder during the installation process
-	Example: INCLUDECADMIUM=-I ../../cadmium/include
+	Example: INCLUDECADMIUM=-I lib/cadmium/include
     
 2 - Run the unit tests
 	2.1. Run subnet test
 		1 - Open the terminal. Press in your keyboard Ctrl+Alt+t
-		2 - Set the command prompt in the test/subnet folder. To do so, type in the terminal the path to this folder.
-			Example: cd Documents/AlternateBitProtocol/test/subnet
+		2 - Set the command prompt in the base folder where makefile is. To do so, type in the terminal the path to this folder.
+			Example: cd Documents/AlternateBitProtocol/
 		3 - To compile the test, type in the terminal:
-			make clean; make all
-		4 - To run the test, type in the terminal "./NAME_OF_THE_COMPILED_FILE". For this specific test you need to type:
+			make clean_tests; make tests
+		4 - To run the test, goto the test/src/subnet directory and type in the terminal "./NAME_OF_THE_COMPILED_FILE". For this specific test you need to type:
 			./SUBNET
-		5 - To check the output of the test, open  "subnet_test_output.txt"
+		5 - To check the output of the test, open  "subnet_test_output.txt" in test/data folder.
 	2.2. To run receiver and sender tests, the steps are analogous to 2.1
 			
 3 - Run the simulator
 	1 - Open the terminal. Press in your keyboard Ctrl+Alt+t
 	2 - Set the command prompt in the top_model folder. To do so, type in the terminal the path to this folder.
-		Example: cd ../../top_model
+		Example: cd Documents/AlternateBitProtocol/
 	3 - To compile the project, type in the terminal:
-		make clean; make all
-	4 - To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
-		./ABP input_abp_1.txt
-	5 - To check the output of the simulation, open  "abp_output.txt"
+		make clean_simulator; make simulator
+	4 - To run the simulation, goto bin/src/ folder and type in the terminal "./NAME_OF_THE_COMPILED_FILE path_and_NAME_OF_THE_INPUT_FILE". For this test you need to type:
+		./ABP ../../test/data/input_abp_1.txt
+	5 - To check the output of the simulation, open  "abp_output.txt" in /test/data folder.
 	6 - To execute the simulator with different inputs
 		6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
 		6.2. Run the simulator using the instructions in step 4
-		6.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
+		6.3. If you want to keep the output, rename abp_output.txt. To do so, goto test/data/ folder and type in the terminal: "mv abp_output.txt NEW_NAME"
 			Example: mv abp_output.txt abp_output_0.txt
