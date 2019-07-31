@@ -22,6 +22,7 @@ doc  [This folder contains documentation other than README.txt]
 		Cadmium_Documentation_Ubuntu.pdf
 		Cadmium_Windows.pdf
 
+<<<<<<< HEAD
 include [This folder consists of various header(.hpp) files used in the code.]
 	 atomics [This folder contains the header files cadmium]
 				receiverCadmium.hpp
@@ -29,6 +30,15 @@ include [This folder consists of various header(.hpp) files used in the code.]
 				subnetCadmium.hpp
 	 data_structures [This folder contains the header files for data_structure]
 				message.hpp	
+=======
+include - This folder consists of various header(.hpp) files used in the code.
+		- atomics
+			receiverCadmium.hpp
+			senderCadmium.hpp
+			subnetCadmium.hpp
+		-data_structures
+			message.hpp	
+>>>>>>> a3907bb1397fc60ad47334c55cd5d901a947d1ab
 
 lib  [This Folder consists of  third-party library files.]
 		- cadmium (This folder contains the cadmium (third party) library files)
