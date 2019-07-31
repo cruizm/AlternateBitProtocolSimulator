@@ -19,9 +19,9 @@
 
 #include "../../include/data_structures/message.hpp"
 
-#include "../../includeatomics/senderCadmium.hpp"
-#include "../../includeatomics/receiverCadmium.hpp"
-#include "../../includeatomics/subnetCadmium.hpp"
+#include "../../include/atomics/senderCadmium.hpp"
+#include "../../include/atomics/receiverCadmium.hpp"
+#include "../../include/atomics/subnetCadmium.hpp"
 
 
 using namespace std;
@@ -63,7 +63,7 @@ int main(int argc, char ** argv) {
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("abp_output.txt");
+  static std::ofstream out_data("../data/output/abp_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;

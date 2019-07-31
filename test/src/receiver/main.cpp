@@ -50,7 +50,7 @@ int main(){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("receiver_test_output.txt");
+  static std::ofstream out_data("../test/data/receiver/receiver_test_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;

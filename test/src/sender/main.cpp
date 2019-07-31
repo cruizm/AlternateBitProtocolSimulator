@@ -14,7 +14,7 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../../../lib/NDTime.hpp"
+#include "../../../lib/vendor/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 
 #include "../../../include/data_structures/message.hpp"
@@ -53,7 +53,7 @@ int main(){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("sender_test_output.txt");
+  static std::ofstream out_data("../test/data/sender/sender_test_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;

@@ -23,12 +23,12 @@ doc - This folder contains extra documentation other than README.txt
 		Cadmium_Windows.pdf
 
 include - This folder consists of various header(.hpp) files used in the code.
-			- atomics
-				receiverCadmium.hpp
-				senderCadmium.hpp
-				subnetCadmium.hpp
-			-data_structures
-				message.hpp	
+		- atomics
+			receiverCadmium.hpp
+			senderCadmium.hpp
+			subnetCadmium.hpp
+		-data_structures
+			message.hpp	
 
 lib - Folder where third-party library files are stored.
 		- cadmium (This folder contains the cadmium (third party) library files)
