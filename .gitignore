@@ -1,2 +1,4 @@
-*.o
-*.exe
+//Ignoring object(.o) and executable(.exe) files
+
+build/*.o
+Bin/*.exe
