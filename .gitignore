@@ -1,4 +1,4 @@
-//Ignoring object(.o) and executable(.exe) files
+#Ignoring object(.o) and executable(.exe) files
 
 build/*.o
 Bin/*.exe
