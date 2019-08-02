@@ -73,7 +73,7 @@ makefile [make file to compile the project]
 		make clean; make all
 	4 - To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
 		./ABP ../data/input_abp_0.txt
-	5 - To check the output of the simulation, open  "data/abp_output.txt"
+	5 - To check the output of the simulation, go to the following directory  "data/abp_output.txt"
 	6 - To execute the simulator with different inputs
 		6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
 		6.2. Run the simulator using the instructions in step 4
