@@ -10,22 +10,22 @@ using namespace std;
 /*******************************************/
 /**************** Message_t ****************/
 /*******************************************/
-struct Message_t{
+struct message_t{
 
-  Message_t(){}
-  Message_t(float i_value)
-   :value(i_value){}
+    message_t(){}
+    message_t(float i_value)
+    :value(i_value){}
 
-  	float   value;
+  	    float   value;
 
-  void clear() {
-   Message_t(); 
+    void clear() {
+        message_t(); 
   }
 };
 
-istream& operator>> (istream& is, Message_t& msg);
+istream& operator>> (istream& is, message_t& msg);
 
-ostream& operator<<(ostream& os, const Message_t& msg);
+ostream& operator<<(ostream& os, const message_t& msg);
 
 
 #endif // BOOST_SIMULATION_MESSAGE_HPP
