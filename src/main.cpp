@@ -20,7 +20,7 @@
 #include "../include/data_structures/message.hpp"
 
 #include "../include/senderCadmium.hpp"
-#include "../include/receiverCadmium.hpp"
+#include "../include/receiver_cadmium.hpp"
 #include "../include/subnetCadmium.hpp"
 
 
@@ -194,8 +194,8 @@ int main(int argc, char ** argv){
     cadmium::dynamic::modeling::ICs ics_ABPSimulator = {
         cadmium::dynamic::translate::make_IC<Sender_defs::dataOut, inp_1>("sender1","Network"),
         cadmium::dynamic::translate::make_IC<outp_2, Sender_defs::ackIn>("Network","sender1"),
-        cadmium::dynamic::translate::make_IC<Receiver_defs::out, inp_2>("receiver1","Network"),
-        cadmium::dynamic::translate::make_IC<outp_1, Receiver_defs::in>("Network","receiver1")
+        cadmium::dynamic::translate::make_IC<receiver_defs::out, inp_2>("receiver1","Network"),
+        cadmium::dynamic::translate::make_IC<outp_1, receiver_defs::in>("Network","receiver1")
     };
     std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> ABPSimulator =
                                                                               std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
