@@ -64,7 +64,7 @@ int main(int argc, char ** argv){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../data/abp_output.txt");
+  static std::ofstream out_data("data/abp_output.txt");
   struct oss_sink_provider{
       static std::ostream& sink(){          
           return out_data;
