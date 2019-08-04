@@ -174,7 +174,7 @@ class Sender{
             os << "packet_num: " << i.packet_num << " & total_packet_num: " << i.total_packet_num; 
             return os;
         }
-    };     
+};     
 
 
 #endif // _BOOST_SIMULATION_PDEVS_SENDER_HPP_
