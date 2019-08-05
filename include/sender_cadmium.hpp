@@ -171,7 +171,8 @@ class Sender{
 
         friend std::ostringstream& operator<<(std::ostringstream& os, 
                                               const typename Sender<TIME>::state_type& i) {
-            os << "packet_num: " << i.packet_num << " & total_packet_num: " << i.total_packet_num; 
+            os << "packet_num: " << i.packet_num << " & total_packet_num: "
+                                                 << i.total_packet_num; 
             return os;
         }
 };     
