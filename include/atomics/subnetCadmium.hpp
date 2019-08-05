@@ -28,30 +28,30 @@ using namespace cadmium;
 using namespace std;
 
 //Port definition
-    struct Subnet_defs{
+    struct subnet_defs{
         struct out : public out_port<Message_t> {
         };
         struct in : public in_port<Message_t> {
         };
     };
 //This is a meta-model, it should be overloaded for declaring the "id" parameter
-    template<typename TIME>
-    class Subnet{
-        using defs=Subnet_defs; // putting definitions in context
-        public:
-            //Parameters to be overwriten when instantiating the atomic model
+template<typename TIME>
+class Subnet{
+    using defs=subnet_defs; // putting definitions in context
+    public:
+        //Parameters to be overwriten when instantiating the atomic model
            
-            // default constructor
+        // default constructor
             Subnet() noexcept{
-              state.transmiting     = false;
-              state.index           = 0;
+                state.transmiting     = false;
+                state.index           = 0;
             }
             
             // state definition
             struct state_type{
-              bool transmiting;
-              int packet;
-              int index;
+                bool transmiting;
+                int packet;
+                int index;
             }; 
             state_type state;
             // ports definition
@@ -64,9 +64,12 @@ using namespace std;
             }
 
             // external transition
-            void external_transition(TIME e, typename make_message_bags<input_ports>::type mbs) { 
+            void external_transition(TIME e, 
+			                         typename make_message_bags<input_ports>::type mbs) { 
                 state.index ++;
-                if(get_messages<typename defs::in>(mbs).size()>1) assert(false && "One message at a time");                
+                if(get_messages<typename defs::in>(mbs).size()>1){ 
+				    assert(false && "One message at a time");
+				}
                 for (const auto &x : get_messages<typename defs::in>(mbs)) {
                   state.packet = static_cast < int > (x.value);
                   state.transmiting = true; 
@@ -74,40 +77,43 @@ using namespace std;
             }
 
             // confluence transition
-            void confluence_transition(TIME e, typename make_message_bags<input_ports>::type mbs) {
+            void confluence_transition(TIME e, 
+			                           typename make_message_bags<input_ports>::type mbs) {
                 internal_transition();
                 external_transition(TIME(), std::move(mbs));
             }
 
             // output function
             typename make_message_bags<output_ports>::type output() const {
-              typename make_message_bags<output_ports>::type bags;
-              Message_t out;
-              if ((double)rand() / (double) RAND_MAX  < 0.95){
+                typename make_message_bags<output_ports>::type bags;
+                Message_t out;
+                if ((double)rand() / (double) RAND_MAX  < 0.95){
                 out.value = state.packet;
                 get_messages<typename defs::out>(bags).push_back(out);
-              }
-              return bags;
+                }
+                return bags;
             }
 
             // time_advance function
             TIME time_advance() const {
-              std::default_random_engine generator;
-              std::normal_distribution<double> distribution(3.0, 1.0); 
-              TIME next_internal;
-              if (state.transmiting) {
-                std::initializer_list<int> time = {0, 0, static_cast < int > (round(distribution(generator)))};
+                std::default_random_engine generator;
+                std::normal_distribution<double> distribution(3.0, 1.0); 
+                TIME next_internal;
+                if (state.transmiting) {
+                    std::initializer_list<int> time = {0, 0, 
+					                                   static_cast < int > (round(distribution(generator)))};
                 // time is hour min and second
-                next_internal = TIME(time);
-              }else {
-                next_internal = std::numeric_limits<TIME>::infinity();
-              }    
-              return next_internal;
+                    next_internal = TIME(time);
+                }else {
+                    next_internal = std::numeric_limits<TIME>::infinity();
+                }    
+                return next_internal;
             }
 
-            friend std::ostringstream& operator<<(std::ostringstream& os, const typename Subnet<TIME>::state_type& i) {
+            friend std::ostringstream& operator<<(std::ostringstream& os, 
+			                                      const typename Subnet<TIME>::state_type& i) {
                 os << "index: " << i.index << " & transmiting: " << i.transmiting; 
-            return os;
+                return os;
             }
-        };    
+};    
 #endif // BOOST_SIMULATION_PDEVS_SUBNET_HPP
