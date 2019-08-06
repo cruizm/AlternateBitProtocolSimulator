@@ -19,7 +19,7 @@
 
 #include "../../../include/data_structures/message.hpp"
 
-#include "../../../include/receiverCadmium.hpp"
+#include "../../../include/receiver_cadmium.hpp"
 
 using namespace std;
 
@@ -96,10 +96,10 @@ cadmium::dynamic::modeling::Ports oports_TOP = {typeid(outp)};
 cadmium::dynamic::modeling::Models submodels_TOP = {generator, receiver1};
 cadmium::dynamic::modeling::EICs eics_TOP = {};
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
-  cadmium::dynamic::translate::make_EOC<Receiver_defs::out,outp>("receiver1")
+  cadmium::dynamic::translate::make_EOC<receiver_defs::out,outp>("receiver1")
 };
 cadmium::dynamic::modeling::ICs ics_TOP = {
-  cadmium::dynamic::translate::make_IC<iestream_input_defs<message_t>::out,Receiver_defs::in>("generator","receiver1")
+  cadmium::dynamic::translate::make_IC<iestream_input_defs<message_t>::out,receiver_defs::in>("generator","receiver1")
 };
 std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
  "TOP", 

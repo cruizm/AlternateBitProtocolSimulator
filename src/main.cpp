@@ -19,9 +19,9 @@
 
 #include "../include/data_structures/message.hpp"
 
-#include "../include/senderCadmium.hpp"
-#include "../include/receiverCadmium.hpp"
-#include "../include/subnetCadmium.hpp"
+#include "../include/sender_cadmium.hpp"
+#include "../include/receiver_cadmium.hpp"
+#include "../include/subnet_cadmium.hpp"
 
 
 using namespace std;
@@ -64,7 +64,7 @@ int main(int argc, char ** argv){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../data/abp_output.txt");
+  static std::ofstream out_data("data/abp_output.txt");
   struct oss_sink_provider{
       static std::ostream& sink(){          
           return out_data;
@@ -159,12 +159,12 @@ int main(int argc, char ** argv){
     cadmium::dynamic::modeling::Ports oports_Network = {typeid(outp_1),typeid(outp_2)};
     cadmium::dynamic::modeling::Models submodels_Network = {subnet1, subnet2};
     cadmium::dynamic::modeling::EICs eics_Network = {
-        cadmium::dynamic::translate::make_EIC<inp_1, Subnet_defs::in>("subnet1"),
-        cadmium::dynamic::translate::make_EIC<inp_2, Subnet_defs::in>("subnet2")
+        cadmium::dynamic::translate::make_EIC<inp_1, subnet_defs::in>("subnet1"),
+        cadmium::dynamic::translate::make_EIC<inp_2, subnet_defs::in>("subnet2")
     };
     cadmium::dynamic::modeling::EOCs eocs_Network = {
-        cadmium::dynamic::translate::make_EOC<Subnet_defs::out,outp_1>("subnet1"),
-        cadmium::dynamic::translate::make_EOC<Subnet_defs::out,outp_2>("subnet2")
+        cadmium::dynamic::translate::make_EOC<subnet_defs::out,outp_1>("subnet1"),
+        cadmium::dynamic::translate::make_EOC<subnet_defs::out,outp_2>("subnet2")
     };
     cadmium::dynamic::modeling::ICs ics_Network = {};
     std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> NETWORK =
@@ -185,17 +185,17 @@ int main(int argc, char ** argv){
     cadmium::dynamic::modeling::Ports oports_ABPSimulator = {typeid(outp_ack),typeid(outp_pack)};
     cadmium::dynamic::modeling::Models submodels_ABPSimulator = {sender1, receiver1,NETWORK};
     cadmium::dynamic::modeling::EICs eics_ABPSimulator = {
-        cadmium::dynamic::translate::make_EIC<inp_control, Sender_defs::controlIn>("sender1")
+        cadmium::dynamic::translate::make_EIC<inp_control, sender_defs::controlIn>("sender1")
     };
     cadmium::dynamic::modeling::EOCs eocs_ABPSimulator = {
-        cadmium::dynamic::translate::make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
-        cadmium::dynamic::translate::make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1")
+        cadmium::dynamic::translate::make_EOC<sender_defs::packetSentOut,outp_pack>("sender1"),
+        cadmium::dynamic::translate::make_EOC<sender_defs::ackReceivedOut,outp_ack>("sender1")
     };
     cadmium::dynamic::modeling::ICs ics_ABPSimulator = {
-        cadmium::dynamic::translate::make_IC<Sender_defs::dataOut, inp_1>("sender1","Network"),
-        cadmium::dynamic::translate::make_IC<outp_2, Sender_defs::ackIn>("Network","sender1"),
-        cadmium::dynamic::translate::make_IC<Receiver_defs::out, inp_2>("receiver1","Network"),
-        cadmium::dynamic::translate::make_IC<outp_1, Receiver_defs::in>("Network","receiver1")
+        cadmium::dynamic::translate::make_IC<sender_defs::dataOut, inp_1>("sender1","Network"),
+        cadmium::dynamic::translate::make_IC<outp_2, sender_defs::ackIn>("Network","sender1"),
+        cadmium::dynamic::translate::make_IC<receiver_defs::out, inp_2>("receiver1","Network"),
+        cadmium::dynamic::translate::make_IC<outp_1, receiver_defs::in>("Network","receiver1")
     };
     std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> ABPSimulator =
                                                                               std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
