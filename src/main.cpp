@@ -69,7 +69,7 @@ int main(int argc, char ** argv){
       static std::ostream& sink(){          
           return out_data;
 
-        }
+      }
 
   };
 
