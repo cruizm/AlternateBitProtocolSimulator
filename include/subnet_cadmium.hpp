@@ -47,9 +47,9 @@ class Subnet{
         
         // state definition
         struct state_type{
-          bool transmiting;
-          int packet;
-          int index;
+            bool transmiting;
+            int packet;
+            int index;
         }; 
         state_type state;
         // ports definition

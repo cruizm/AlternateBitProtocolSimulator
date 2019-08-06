@@ -43,13 +43,13 @@ class Receiver{
         // default constructor
         Receiver() noexcept{
             PREPARATION_TIME  = TIME("00:00:10");
-            state.acknum      = 0;
+            state.ack_num      = 0;
             state.sending     = false;
         }
         
         // state definition
         struct state_type{
-            int acknum;
+            int ack_num;
             bool sending;
         }; 
         state_type state;
@@ -71,7 +71,7 @@ class Receiver{
                 assert(false && "one message per time uniti");
             }
             for(const auto &x : get_messages<typename defs::in>(mbs)){
-              state.acknum = static_cast < int > (x.value);
+              state.ack_num = static_cast < int > (x.value);
               state.sending = true;
             }  
                        
@@ -89,7 +89,7 @@ class Receiver{
         typename make_message_bags<output_ports>::type output() const {
             typename make_message_bags<output_ports>::type bags;
             message_t out;              
-            out.value = state.acknum % 10;
+            out.value = state.ack_num % 10;
             get_messages<typename defs::out>(bags).push_back(out);     
             return bags;
         }
@@ -107,7 +107,7 @@ class Receiver{
 
         friend std::ostringstream& operator<<(std::ostringstream& os,
                                               const typename Receiver<TIME>::state_type& i) {
-            os << "acknum: " << i.acknum; 
+            os << "ack_num: " << i.ack_num; 
         return os;
         }
 };     
