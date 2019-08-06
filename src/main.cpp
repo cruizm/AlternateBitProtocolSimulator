@@ -71,7 +71,7 @@ int main(int argc, char ** argv){
 
         }
 
-    };
+  };
 
     using info=cadmium::logger::logger<cadmium::logger::logger_info,
           cadmium::dynamic::logger::formatter<TIME>,
@@ -216,8 +216,8 @@ int main(int argc, char ** argv){
     cadmium::dynamic::modeling::Models submodels_TOP = {generator_con, ABPSimulator};
     cadmium::dynamic::modeling::EICs eics_TOP = {};
     cadmium::dynamic::modeling::EOCs eocs_TOP = {
-       cadmium::dynamic::translate::make_EOC<outp_pack,outp_pack>("ABPSimulator"),
-       cadmium::dynamic::translate::make_EOC<outp_pack,outp_ack>("ABPSimulator")
+        cadmium::dynamic::translate::make_EOC<outp_pack,outp_pack>("ABPSimulator"),
+        cadmium::dynamic::translate::make_EOC<outp_pack,outp_ack>("ABPSimulator")
     };
     cadmium::dynamic::modeling::ICs ics_TOP = {
         cadmium::dynamic::translate::make_IC<iestream_input_defs<message_t>::out,inp_control>("generator_con","ABPSimulator")
