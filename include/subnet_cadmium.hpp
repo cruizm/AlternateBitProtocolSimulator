@@ -4,8 +4,8 @@
 *
 */
 
-#ifndef _BOOST_SIMULATION_PDEVS_SUBNET_HPP_
-#define _BOOST_SIMULATION_PDEVS_SUBNET_HPP_
+#ifndef __BOOST_SIMULATION_PDEVS_SUBNET_HPP__
+#define __BOOST_SIMULATION_PDEVS_SUBNET_HPP__
 
 #include <cadmium/modeling/ports.hpp>
 #include <cadmium/modeling/message_bag.hpp>
@@ -41,8 +41,8 @@ class Subnet{
        
         // default constructor
         Subnet() noexcept{
-          state.transmiting     = false;
-          state.index           = 0;
+            state.transmiting     = false;
+            state.index           = 0;
         }
         
         // state definition
@@ -114,4 +114,4 @@ class Subnet{
             return os;
         }
 };    
-#endif // _BOOST_SIMULATION_PDEVS_SUBNET_HPP_
+#endif // __BOOST_SIMULATION_PDEVS_SUBNET_HPP__

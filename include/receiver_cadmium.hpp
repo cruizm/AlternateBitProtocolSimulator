@@ -4,8 +4,8 @@
 *
 */
 
-#ifndef _BOOST_SIMULATION_PDEVS_RECEIVER_HPP_
-#define _BOOST_SIMULATION_PDEVS_RECEIVER_HPP_
+#ifndef __BOOST_SIMULATION_PDEVS_RECEIVER_HPP__
+#define __BOOST_SIMULATION_PDEVS_RECEIVER_HPP__
 
 
 #include <cadmium/modeling/ports.hpp>
@@ -43,13 +43,13 @@ class Receiver{
         // default constructor
         Receiver() noexcept{
             PREPARATION_TIME  = TIME("00:00:10");
-            state.ackNum      = 0;
+            state.acknum      = 0;
             state.sending     = false;
         }
         
         // state definition
         struct state_type{
-            int ackNum;
+            int acknum;
             bool sending;
         }; 
         state_type state;
@@ -71,7 +71,7 @@ class Receiver{
                 assert(false && "one message per time uniti");
             }
             for(const auto &x : get_messages<typename defs::in>(mbs)){
-              state.ackNum = static_cast < int > (x.value);
+              state.acknum = static_cast < int > (x.value);
               state.sending = true;
             }  
                        
@@ -89,7 +89,7 @@ class Receiver{
         typename make_message_bags<output_ports>::type output() const {
             typename make_message_bags<output_ports>::type bags;
             message_t out;              
-            out.value = state.ackNum % 10;
+            out.value = state.acknum % 10;
             get_messages<typename defs::out>(bags).push_back(out);     
             return bags;
         }
@@ -107,10 +107,10 @@ class Receiver{
 
         friend std::ostringstream& operator<<(std::ostringstream& os,
                                               const typename Receiver<TIME>::state_type& i) {
-            os << "ackNum: " << i.ackNum; 
+            os << "acknum: " << i.acknum; 
         return os;
         }
-    };     
+};     
   
 
-#endif // _BOOST_SIMULATION_PDEVS_RECEIVER_HPP_
+#endif // __BOOST_SIMULATION_PDEVS_RECEIVER_HPP__
