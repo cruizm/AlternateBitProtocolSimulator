@@ -20,7 +20,7 @@ struct message_t{
 
     void clear() {
         message_t(); 
-  }
+  	}
 };
 
 istream& operator>> (istream& is, message_t& msg);
