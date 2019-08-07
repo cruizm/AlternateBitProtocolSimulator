@@ -108,7 +108,7 @@ class Receiver{
         friend std::ostringstream& operator<<(std::ostringstream& os,
                                               const typename Receiver<TIME>::state_type& i) {
             os << "ack_num: " << i.ack_num; 
-        return os;
+            return os;
         }
 };     
   
