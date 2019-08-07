@@ -59,19 +59,19 @@ int main(int argc, char ** argv){
         cout << "you are using this program with wrong parameters. Te program should be invoked as follow:";
         cout << argv[0] << " path to the input file " << endl;
         return 1; 
-  }
+    }
 
-  auto start = hclock::now(); //to measure simulation execution time
+    auto start = hclock::now(); //to measure simulation execution time
 
-/*************** Loggers *******************/
-  static std::ofstream out_data("data/abp_output.txt");
-  struct oss_sink_provider{
-      static std::ostream& sink(){          
-          return out_data;
+    /*************** Loggers *******************/
+      static std::ofstream out_data("data/abp_output.txt");
+      struct oss_sink_provider{
+          static std::ostream& sink(){          
+              return out_data;
 
-      }
+          }
 
-  };
+      };
 
     using info=cadmium::logger::logger<cadmium::logger::logger_info,
           cadmium::dynamic::logger::formatter<TIME>,

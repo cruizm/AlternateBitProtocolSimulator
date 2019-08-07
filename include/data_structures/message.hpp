@@ -1,5 +1,5 @@
-#ifndef BOOST_SIMULATION_MESSAGE_HPP
-#define BOOST_SIMULATION_MESSAGE_HPP
+#ifndef __BOOST_SIMULATION_MESSAGE_HPP__
+#define __BOOST_SIMULATION_MESSAGE_HPP__
 
 #include <assert.h>
 #include <iostream>
