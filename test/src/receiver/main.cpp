@@ -38,9 +38,9 @@ struct outp : public cadmium::out_port<message_t>{};
 
 template<typename T>
 class ApplicationGen : public iestream_input<message_t,T> {
-public:
-    ApplicationGen() = default;
-    ApplicationGen(const char* file_path) : 
+    public:
+        ApplicationGen() = default;
+        ApplicationGen(const char* file_path) : 
 	iestream_input<message_t,T>(file_path){}
 };
 
@@ -55,8 +55,8 @@ int main(){
 
     static std::ofstream out_data("../test/data/receiver/receiver_test_output.txt");
     struct oss_sink_provider{
-        static std::ostream& sink(){          
-        return out_data;
+       static std::ostream& sink(){          
+          return out_data;
         }
     };
 
