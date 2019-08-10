@@ -68,7 +68,7 @@ test [This folder the unit test for the different include files]
 	2 - To compile the project, type in the terminal:
 		make clean_all; make all
 	3 - To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
-		./bin/ABP ../data/input_abp_1.txt
+		./bin/ABP data/input_abp_1.txt
 	4 - To check the output of the simulation, open  "abp_output.txt"
 	5 - To execute the simulator with different inputs
 		5.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
