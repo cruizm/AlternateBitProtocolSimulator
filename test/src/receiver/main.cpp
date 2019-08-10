@@ -46,7 +46,6 @@ class ApplicationGen : public iestream_input<message_t,T> {
 
 
 int main(){
-
     auto start = hclock::now(); //to measure simulation execution time
   
 /***************************/
@@ -136,12 +135,12 @@ cadmium::dynamic::modeling::EOCs eocs_TOP = {
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
     cadmium::dynamic::translate::make_IC<iestream_input_defs<Message_t>::
-	out,receiver_defs::in>("generator","receiver1")
+    out,receiver_defs::in>("generator","receiver1")
 };
 
 std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> 
 TOP = std::make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
-       "TOP", 
+    "TOP", 
     submodels_TOP, 
     iports_TOP, 
     oports_TOP, 
