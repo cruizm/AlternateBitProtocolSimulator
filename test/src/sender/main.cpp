@@ -46,7 +46,7 @@ class ApplicationGen : public iestream_input<Message_t,T> {
 public:
     ApplicationGen() = default;
     ApplicationGen(const char* file_path) : 
-	iestream_input<Message_t,T>(file_path) {}
+    iestream_input<Message_t,T>(file_path) {}
 };
 
 
@@ -136,13 +136,13 @@ cadmium::dynamic::modeling::EICs eics_TOP = {};
 
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
     cadmium::dynamic::translate::
-	make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
+    make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
 
-cadmium::dynamic::translate::
-make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1"),
+    cadmium::dynamic::translate::
+    make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1"),
 
-cadmium::dynamic::translate::
-make_EOC<Sender_defs::dataOut,outp_data>("sender1")
+    cadmium::dynamic::translate::
+    make_EOC<Sender_defs::dataOut,outp_data>("sender1")
 };
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
