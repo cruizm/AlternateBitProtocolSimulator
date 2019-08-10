@@ -130,7 +130,8 @@ cadmium::dynamic::modeling::Models submodels_TOP = {generator, receiver1};
 cadmium::dynamic::modeling::EICs eics_TOP = {};
 
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
-    cadmium::dynamic::translate::make_EOC<receiver_defs::out,outp>("receiver1")
+    cadmium::dynamic::translate::
+    make_EOC<receiver_defs::out,outp>("receiver1")
 };
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
