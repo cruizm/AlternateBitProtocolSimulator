@@ -57,7 +57,7 @@ int main(){
        static std::ostream& sink(){          
           return out_data;
         }
-    };
+};
 
 using info=cadmium::logger::logger
     <cadmium::logger::logger_info, 
