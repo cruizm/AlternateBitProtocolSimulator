@@ -38,9 +38,9 @@ struct outp_out: public cadmium::out_port<Message_t>{};
 
 template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
-public:
-  ApplicationGen() = default;
-  ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
+    public:
+    ApplicationGen() = default;
+    ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
 };
 
 
