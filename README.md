@@ -35,11 +35,13 @@
 		
 ### test [This folder the unit test for the different include files]
 1. data [This folder contains test input output files]
+		
 		1.1 receiver [This folder contains the input output files foe the unit test of the receiver]
 		1.2 sender [This folder contains the input output files foe the unit test of the sender]
 		1.3 subnet [This folder contains the input output files foe the unit test of the subnet]
 		
 2. src [This folder contains the source code for the sender,receiver and subnet]
+		
 		2.1 receiver[This folder contains the source code for the receiver]
 			main.cpp
 		2.2 sender[This folder contains the source code for the sender]
@@ -72,13 +74,14 @@
 2.2  To run receiver and sender tests, the steps are analogous to 2.1, just select the appropriate path
 
 3. Run the simulator
-    1. Open the terminal. Press in your keyboard Ctrl+Alt+t
+   1. Open the terminal. Press in your keyboard Ctrl+Alt+t
    2. Set the command prompt in the project folder. To do so, type in the terminal the path to this folder.
 >		          Example: cd Documents/AlternateBitProtocol
 4. To run the simulation, type in the terminal "./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE". For this test you need to type:
 >	              ./bin/ABP ../data/input_abp_0.txt
 5. To check the output of the simulation, open  "data/abp_output.txt"
 6. To execute the simulator with different inputs
+ 
  6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
  6.2. Run the simulator using the instructions in step 4
  6.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
