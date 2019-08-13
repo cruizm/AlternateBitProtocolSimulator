@@ -83,6 +83,8 @@
 6. To execute the simulator with different inputs
  
  6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+ 
  6.2. Run the simulator using the instructions in step 4
+ 
  6.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
 >		         Example: mv abp_output.txt abp_output_0.txt
