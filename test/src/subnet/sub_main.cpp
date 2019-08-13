@@ -40,7 +40,8 @@ template<typename T>
 class ApplicationGen : public iestream_input<Message_t,T> {
     public:
     ApplicationGen() = default;
-    ApplicationGen(const char* file_path) : iestream_input<Message_t,T>(file_path) {}
+    ApplicationGen(const char* file_path) : 
+	iestream_input<Message_t,T>(file_path) {}
 };
 
 
