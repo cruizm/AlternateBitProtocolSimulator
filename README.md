@@ -9,10 +9,10 @@
 **Modified by**: Tarim Islam & Navid Hossain
 ### Introduction
 ---
-## Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
-**Receiver**- It receives the data and sends back acknowledgement after certain perios of time.
-**Subnets**- It just transmits the packets to next node after a time delay.
-**Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
+#### Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
+### **Receiver**- It receives the data and sends back acknowledgement after certain perios of time.
+### **Subnets**- It just transmits the packets to next node after a time delay.
+### **Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
 ---
 ### File Management
 1. src [This folder contains the source code for the message and top model]
