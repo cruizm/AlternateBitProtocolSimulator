@@ -60,7 +60,7 @@
 	4. abp_output_1.txt
 ### makefile [make file to compile the project]
 	
-### STEPS to Run Simulations
+### Steps to Run Simulations
 ---
 **alternatebitprotocol.doc contains the explanation of this simulator**
        1.   Run the unit test
