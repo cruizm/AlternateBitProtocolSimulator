@@ -156,15 +156,14 @@ cadmium::dynamic::modeling::ICs ics_TOP = {
 
 std::shared_ptr<cadmium::dynamic::
 modeling::coupled<TIME>> TOP = std::
-make_shared<cadmium::dynamic::modeling::coupled<TIME>>(
-    "TOP", 
-    submodels_TOP, 
-    iports_TOP, 
-    oports_TOP, 
-    eics_TOP, 
-    eocs_TOP, 
-    ics_TOP 
-);
+make_shared<cadmium::dynamic::modeling::coupled<TIME>>( "TOP", 
+                                                        submodels_TOP, 
+                                                        iports_TOP, 
+                                                        oports_TOP, 
+                                                        eics_TOP, 
+                                                        eocs_TOP, 
+                                                        ics_TOP 
+                                                       );
 
 ///****************////
 
