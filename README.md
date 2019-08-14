@@ -9,10 +9,10 @@
 **Modified by**: Tarim Islam & Navid Hossain
 ### Introduction
 ---
-#### Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
-**Receiver**- It receives the data and sends back acknowledgement after certain perios of time.
-**Subnets**- It just transmits the packets to next node after a time delay.
-**Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
+### Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
+#### **Receiver**- It receives the data and sends back acknowledgement after certain perios of time.
+#### **Subnets**- It just transmits the packets to next node after a time delay.
+#### **Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
 ---
 ### File Management
 1. src [This folder contains the source code for the message and top model]
@@ -35,11 +35,13 @@
 		
 ### test [This folder the unit test for the different include files]
 1. data [This folder contains test input output files]
+		
 		1.1 receiver [This folder contains the input output files foe the unit test of the receiver]
 		1.2 sender [This folder contains the input output files foe the unit test of the sender]
 		1.3 subnet [This folder contains the input output files foe the unit test of the subnet]
 		
 2. src [This folder contains the source code for the sender,receiver and subnet]
+		
 		2.1 receiver[This folder contains the source code for the receiver]
 			main.cpp
 		2.2 sender[This folder contains the source code for the sender]
@@ -79,7 +81,10 @@
 >	              ./bin/ABP ../data/input_abp_0.txt
 5. To check the output of the simulation, open  "data/abp_output.txt"
 6. To execute the simulator with different inputs
+
  6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+ 
  6.2. Run the simulator using the instructions in step 4
+ 
  6.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
 >		         Example: mv abp_output.txt abp_output_0.txt
