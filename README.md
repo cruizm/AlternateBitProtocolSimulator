@@ -88,7 +88,7 @@ apt-cyg install git
 ```
 Please use these commands if you don't have git pre-installed in your system.
 
-**Cadmium dependencies installations:**
+**Cadmium dependencies installations **
 
 Open the Cygwin terminal in the location where you have downloaded the setup (.exe) file for cygwin. Type
 ``` ./setup-x86_64.exe -q -P libboost-devel or apt-cyg install libboost-devel. ``` 
