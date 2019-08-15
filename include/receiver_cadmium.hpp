@@ -48,8 +48,7 @@ struct receiver_defs{
 };
    
 /**
- * @brief      Class for Receiver.
- *
+ * @brief      Class for Receiver
  * The Receiver class receives message and answers with acknowledgement.
  */
 template<typename TIME>
