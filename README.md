@@ -48,8 +48,8 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - subnetCadmium.hpp
 
 **lib [This folder contains 3rd party header files needed in the project]**
-1. cadmium [[This folder contains cadmium functionalities]
-2. DESTimes[[This folder contains DESTimes functionalities]
+1. cadmium [This folder contains cadmium functionalities]
+2. DESTimes [This folder contains DESTimes functionalities]
 -	iestream.hpp
 -	NDTime.hpp
 
@@ -58,7 +58,7 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - message.cpp
 
 **test [This folder the unit test for the different include files]**
-1. 	data  [Data files used by receiver, sender and subnet]**
+1. 	data  [Data files used by receiver, sender and subnet]
     -  receiver_input_test.txt
 	- receiver_test_output.txt
 	- sender_input_test_ack_In.txt
