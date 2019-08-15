@@ -67,14 +67,15 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 	- subnet_input_test.txt
 	-   subnet_test_output.txt
 2. 	src [Contains the source code]
-	i. receiver [This folder contains the unit test of the receiver]
+
+	  i. receiver [This folder contains the unit test of the receiver]
      - receiver.cpp
      
     ii. sender [This folder contains the unit test of the sender]
-	 - sender.cpp
+	   - sender.cpp
 
-	iii. subnet [This folder contains the unit test of the subnet]
-	- subnet.cpp
+  	iii. subnet [This folder contains the unit test of the subnet]
+  	- subnet.cpp
 ---
 # Installation Guide
 Below are the instructions to install dependencies on Windows operating system and tLnux is available in the section [Installation Guide and Documentation](https://github.com/hamza-sadruddin/AlternateBitProtocolSimulator/tree/master/doc).
