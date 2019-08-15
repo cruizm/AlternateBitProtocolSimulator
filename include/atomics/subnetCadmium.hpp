@@ -65,7 +65,7 @@ class Subnet{
     }
             
     /**
-    * Structure state definition which contains state
+    * Structure state definition which contains the state
     * type variables.
     */
     struct state_type{
