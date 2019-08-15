@@ -4,7 +4,7 @@
 ---
 ### *Authors:*
 ### Originally Developed By: [Dr. Cristina Ruiz Martin](https://github.com/cruizm)
-#### Modified By: [Saad Hasan](https://github.com/khanyousefzai) and [Hamza Sadruddin](https://github.com/hamza-sadruddin)
+### Modified By: [Saad Hasan](https://github.com/khanyousefzai) and [Hamza Sadruddin](https://github.com/hamza-sadruddin)
 ---
 # Introduction
 
@@ -89,6 +89,7 @@ apt-cyg install git
 Please use these commands if you don't have git pre-installed in your system.
 
 **Cadmium dependencies installations:**
+
 Open the Cygwin terminal in the location where you have downloaded the setup (.exe) file for cygwin. Type
 ``` ./setup-x86_64.exe -q -P libboost-devel or apt-cyg install libboost-devel. ``` 
 This will install boost library.
