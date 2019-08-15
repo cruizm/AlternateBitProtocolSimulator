@@ -95,7 +95,7 @@ class Receiver{
 
         /**
          * @brief      Function handles exteral transition.
-         * It fteches the message and checks if the number of messages 
+         * It fetches the message and checks if the number of messages 
          * is more than 1, then asserts by sending the stated message and 
          * changes the state to false. It then sets the acknowledge to the 
          * message value and sets the sending state to true.
@@ -130,7 +130,7 @@ class Receiver{
         }
 
         /**
-         * @brief      Make messge bag fucntion
+         * @brief      Messge bag fucntion
          * It is responsible for sending acknowledge number to the ouput
          * port. Which is the remainder, when the acknowledge number is divided
          * by 10.
@@ -146,7 +146,7 @@ class Receiver{
 
         /**
          * @brief      Time Advance Function
-         * This function sets the next internal transition time.
+         * Function sets the next internal transition time.
          * If the current state of sending is true, then the internatl
          * time is set to PREPARATION_TIME. Otherwise, it is set to infinity.
          * @return     Next internal time
@@ -162,7 +162,7 @@ class Receiver{
         }
         /**
          * @brief      Friend function
-         * This function that outputs acknowledge number to ostring stream.
+         * Function outputs acknowledge number to ostring stream.
          * @param      os    the ostring stream
          * @param[in]  i     structure state_type
          *
