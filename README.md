@@ -64,7 +64,7 @@
 ---
 **alternatebitprotocol.doc contains the explanation of this simulator**
        
-       1.   Run the unit test
+ 1.  Run the unit test
        
 2.1  Run subnet test
 
