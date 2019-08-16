@@ -1,5 +1,6 @@
 /** \brief header file which is containing headers for the messages
- *  Defines a message_t structure
+ * 
+ * Defines a message_t structure
  */
 
 #ifndef __BOOST_SIMULATION_MESSAGE_HPP__
