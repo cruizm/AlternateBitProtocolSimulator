@@ -164,7 +164,7 @@ class Subnet{
             if (state.transmiting) {
                 std::initializer_list<int> time = {0, 0, 
                                                    static_cast < int > (round(distribution(generator)))};
-                // time is hour min and second
+                /** Time is in hour min and second */
                 next_internal = TIME(time);
             }else {
                 next_internal = std::numeric_limits<TIME>::infinity();
