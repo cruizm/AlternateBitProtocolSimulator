@@ -10,7 +10,7 @@
 /************* Output stream ************************/
 /***************************************************/
 
-ostream& operator<<(ostream& os, const message_t& msg) {
+ostream& operator<<(ostream& os, const Message_t& msg) {
     os << msg.value;
     return os;
 }
@@ -19,7 +19,7 @@ ostream& operator<<(ostream& os, const message_t& msg) {
 /************* Input stream ************************/
 /***************************************************/
 
-istream& operator>>(istream& is, message_t& msg) {
+istream& operator>>(istream& is, Message_t& msg) {
     is >> msg.value;
     return is;
 }

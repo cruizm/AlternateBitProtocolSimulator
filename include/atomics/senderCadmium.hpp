@@ -27,7 +27,7 @@ using namespace cadmium;
 using namespace std;
 
 //Port definition
-    struct Sender_defs{
+    struct sender_defs{
         struct packetSentOut : public out_port<Message_t> {
         };
         struct ackReceivedOut : public out_port<Message_t> {
@@ -42,7 +42,7 @@ using namespace std;
 
     template<typename TIME>
     class Sender{
-        using defs=Sender_defs; // putting definitions in context
+        using defs=sender_defs; // putting definitions in context
         public:
             //Parameters to be overwriten when instantiating the atomic model
             TIME   preparationTime;

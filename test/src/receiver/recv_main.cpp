@@ -36,33 +36,33 @@ using TIME = NDTime;
   * SETING INPUT PORTS FOR messages 
 */
 
-struct inp : public cadmium::in_port<message_t>{};
+struct inp : public cadmium::in_port<Message_t>{};
 
 /** 
   * SETING OUTPUT PORTS FOR messages 
 */
 
 
-struct outp : public cadmium::out_port<message_t>{};
+struct outp : public cadmium::out_port<Message_t>{};
 
 /**
 * This is application generator class 
 * that take parameter as a file path
-* and wait  for @tparam T messsage input
+* and wait  for @tparam[in] T messsage input
 */
 
 template<typename T>
-class ApplicationGen : public iestream_input<message_t,T> {
+class ApplicationGen : public iestream_input<Message_t,T> {
     public:
     ApplicationGen() = default;
 	/**
 	* It is a parameterized constructor for application generator class in which
 	* from file path it takes input of the path of the file that has input 
 	* for application to run
-	* @param file_path
+	* @param[in] file_path
 	*/
     ApplicationGen(const char* file_path) : 
-    iestream_input<message_t,T>(file_path){}
+    iestream_input<Message_t,T>(file_path){}
 };
 
 

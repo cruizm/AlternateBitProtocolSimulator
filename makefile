@@ -13,14 +13,14 @@ all: build\main_receiver.o build\main_sender.o build\main_subnet.o build\main_to
 	$(CC) -g -o bin\ABP build\main_top_model.o build\message.o
 
 
-build\main_receiver.o: test\src\receiver\main.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\receiver\main.cpp -o build\main_receiver.o
+build\main_receiver.o: test\src\receiver\recv_main.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\receiver\recv_main.cpp -o build\main_receiver.o
 
-build\main_sender.o: test\src\sender\main.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\sender\main.cpp -o build\main_sender.o
+build\main_sender.o: test\src\sender\send_main.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\sender\send_main.cpp -o build\main_sender.o
 	
-build\main_subnet.o: test\src\subnet\main.cpp
-	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\subnet\main.cpp -o build\main_subnet.o
+build\main_subnet.o: test\src\subnet\sub_main.cpp
+	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) test\src\subnet\sub_main.cpp -o build\main_subnet.o
 	
 build\main_top_model.o: src\top_model\main.cpp
 	$(CC) -g -c $(CFLAGS) $(INCLUDECADMIUM) src\top_model\main.cpp -o build\main_top_model.o

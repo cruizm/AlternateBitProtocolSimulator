@@ -46,7 +46,7 @@ struct outp_out: public cadmium::out_port<Message_t>{};
 /**
 *This is application generator class 
 *that take parameter as a file path
-*and wait  for @tparam T messsage input
+*and wait  for @tparam[in] T messsage input
 */
 
 template<typename T>
@@ -57,7 +57,7 @@ class ApplicationGen : public iestream_input<Message_t,T> {
     * It is a parameterized constructor for application generator class in 
     * which from file path it takes input of the path of the file that has input 
     * for application to run
-    * @param file_path
+    * @param[in] file_path
     */
     ApplicationGen(const char* file_path) : 
 	iestream_input<Message_t,T>(file_path) {}

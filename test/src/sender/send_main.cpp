@@ -136,22 +136,22 @@ cadmium::dynamic::modeling::EICs eics_TOP = {};
 
 cadmium::dynamic::modeling::EOCs eocs_TOP = {
     cadmium::dynamic::translate::
-    make_EOC<Sender_defs::packetSentOut,outp_pack>("sender1"),
+    make_EOC<sender_defs::packetSentOut,outp_pack>("sender1"),
 
     cadmium::dynamic::translate::
-    make_EOC<Sender_defs::ackReceivedOut,outp_ack>("sender1"),
+    make_EOC<sender_defs::ackReceivedOut,outp_ack>("sender1"),
 
     cadmium::dynamic::translate::
-    make_EOC<Sender_defs::dataOut,outp_data>("sender1")
+    make_EOC<sender_defs::dataOut,outp_data>("sender1")
 };
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<Message_t>::
-  out,Sender_defs::controlIn>("generator_con","sender1"),
+  out,sender_defs::controlIn>("generator_con","sender1"),
   cadmium::dynamic::translate::
   make_IC<iestream_input_defs<Message_t>::
-  out,Sender_defs::ackIn>("generator_ack","sender1")
+  out,sender_defs::ackIn>("generator_ack","sender1")
 };
 
 std::shared_ptr<cadmium::dynamic::
