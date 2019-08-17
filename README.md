@@ -3,8 +3,8 @@
 ### FILES ORGANIZATION
 ---
 ### Carleton University
-#### Authors
 ---
+#### Authors
 **Main Developer**: Cristina Ruiz Martin
 **Modified by**: Tarim Islam & Navid Hossain
 ### Introduction
