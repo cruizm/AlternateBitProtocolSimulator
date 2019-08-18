@@ -58,7 +58,7 @@ class Receiver{
     public:
         
         TIME PREPARATION_TIME; /**<Time delay constant holder from acknowledgement to output. */
-                               //!< Time constant delay 
+                               /**< Time constant delay */
         /**
          * @brief      Constructs the object.
          * It it initializes the delay constant, sets the state acknowledgement
@@ -75,9 +75,9 @@ class Receiver{
          */
         struct state_type{
             int ack_num;    /**< Alternating bit fetched from the message and acknowledgement number. */
-                            //!< Acknowledgement number
+                            /**< Acknowledgement number */
             bool sending;   /**< State of the receiver, passive(false) or active(true) */
-                            //!< Sending State
+                            /**< Sending State */
         }; 
         state_type state;
 
