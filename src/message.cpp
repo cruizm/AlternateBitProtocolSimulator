@@ -1,3 +1,9 @@
+/** \brief Source file implemented for message source code
+ * 
+ * It has input and output stream methods coming from the header file
+ * which is returning type of float in the form of message structure
+ */
+
 #include <math.h> 
 #include <assert.h>
 #include <iostream>
