@@ -5,8 +5,19 @@
 ### Carleton University
 ---
 #### Authors
-**Main Developer**: Cristina Ruiz Martin
-**Modified by**: Tarim Islam & Navid Hossain
+
+**Main Developer**: Dr. [Cristina Ruiz Martin](https://github.com/cruizm)<br>
+**Modified by**: [Tarim Islam](https://github.com/tarimislam) & [Navid Hossain](https://github.com/navid-hossain)
+
+### Table of Content
+---
+- [Introduction](#Introduction)
+
+- [File Management](#File-Management)
+
+- [Steps to Run Simulation](#Steps-To-Run-Simulation) 
+
+
 ### Introduction
 ---
 ### Alternate Bit Protocol (ABP) is a protocol which is connectionless for transfering pair of protocol entities. It is a simple form of sliding window protocol.Interation of two pairs in a message is based on sequence of 0 & 1. 
@@ -60,11 +71,11 @@
 	4. abp_output_1.txt
 ### makefile [make file to compile the project]
 	
-### Steps to Run Simulations
+### Steps to Run Simulation
 ---
 **alternatebitprotocol.doc contains the explanation of this simulator**
        
- 1.  Run the unit test
+ 1. Run the unit test
        
 2.1  Run subnet test
 
