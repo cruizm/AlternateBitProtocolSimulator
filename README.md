@@ -31,9 +31,13 @@
 3. top_model [Contains the source code for the top_model]
 4. lib [This folder contains the third party header files]
 5. vendor[This folder contains 3rd party header files needed in the project]
+   
    5.1 iestream.hpp
+   
    5.2 NDTime.hpp
+   
    5.3 cadmium-master[contains cadmium files]
+   
    5.4 DESTimes-master[contains destimes files]
 	
 ### include [This folder contains the header files used]
