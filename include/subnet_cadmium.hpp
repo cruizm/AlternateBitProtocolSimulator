@@ -49,7 +49,7 @@ struct subnet_defs{
     struct in : public in_port<message_t> {};
 };
 
-//This is a meta-model, it should be overloaded for declaring the "id" parameter
+/**This is a meta-model, it should be overloaded for declaring the "id" parameter */
 /**
  * @brief      Class for subnet.
  * The Subnet class receives message and transmits them out with some delay.
