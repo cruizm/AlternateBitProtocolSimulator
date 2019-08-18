@@ -19,9 +19,9 @@
 
 #include "../../include/data_structures/message.hpp"
 
-#include "../../include/atomics/senderCadmium.hpp"
-#include "../../include/atomics/receiverCadmium.hpp"
-#include "../../include/atomics/subnetCadmium.hpp"
+#include "../../include/atomics/sender_cadmium.hpp"
+#include "../../include/atomics/receiver_cadmium.hpp"
+#include "../../include/atomics/subnet_cadmium.hpp"
 
 
 #define MAIN_OUTPUT "../data/abp_output.txt"
