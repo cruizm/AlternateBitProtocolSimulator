@@ -25,7 +25,7 @@
 #include "../../../lib/vendor/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 #include "../../../include/data_structures/message.hpp"
-#include "../../../include/atomics/receiverCadmium.hpp"
+#include "../../../include/atomics/receiver_cadmium.hpp"
 
 using namespace std;
 using hclock=chrono::high_resolution_clock;
@@ -129,7 +129,7 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 * runs the execution for number of time based on input
 */
 
-string input_data_control = "receiver_input_test.txt";
+string input_data_control = "../test/data/receiver/receiver_input_test.txt";
 const char * i_input_data_control = input_data_control.c_str();
 	
 /**

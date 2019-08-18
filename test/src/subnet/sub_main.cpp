@@ -25,7 +25,7 @@
 #include "../../../lib/vendor/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 #include "../../../include/data_structures/message.hpp"
-#include "../../../include/atomics/subnetCadmium.hpp"
+#include "../../../include/atomics/subnet_cadmium.hpp"
 
 using namespace std;
 
@@ -124,7 +124,7 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 * runs the execution for number of time based on input
 */
 
-string input_data = "subnet_input_test.txt";
+string input_data = "../test/data/subnet/subnet_input_test.txt";
 const char * i_input_data = input_data.c_str();
 
 /**

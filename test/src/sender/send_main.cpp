@@ -17,7 +17,7 @@
 #include "../../../lib/vendor/NDTime.hpp"
 #include "../../../lib/vendor/iestream.hpp"
 #include "../../../include/data_structures/message.hpp"
-#include "../../../include/atomics/senderCadmium.hpp"
+#include "../../../include/atomics/sender_cadmium.hpp"
 
 using namespace std;
 
@@ -97,14 +97,14 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 /****** APPLICATION GENERATOR ***************/
 /********************************************/
 
-string input_data_control = "sender_input_test_control_In.txt";
+string input_data_control = "../../data/sender/sender_input_test_control_In.txt";
 const char * i_input_data_control = input_data_control.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_con = 
 cadmium::dynamic::translate::make_dynamic_atomic_model<ApplicationGen, 
 TIME, const char* >("generator_con" , std::move(i_input_data_control));
 
-string input_data_ack = "sender_input_test_ack_In.txt";
+string input_data_ack = "../../data/sender/sender_input_test_ack_In.txt";
 const char * i_input_data_ack = input_data_ack.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_ack = 
