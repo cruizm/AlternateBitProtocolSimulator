@@ -24,6 +24,11 @@
 #include "../../include/atomics/subnetCadmium.hpp"
 
 
+#define MAIN_OUTPUT "../data/abp_output.txt"
+
+#include "../organize.cpp"
+
+
 using namespace std;
 
 using hclock=chrono::high_resolution_clock;
@@ -209,5 +214,12 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
     r.run_until(NDTime("04:00:00:000"));
     auto elapsed = std::chrono::duration_cast<std::chrono::duration<double, std::ratio<1>>>(hclock::now() - start).count();
     cout << "Simulation took:" << elapsed << "sec" << endl;
+	
+	FILE *input;
+	FILE *output;
+	input = fopen("../data/abp_output.txt","r");
+	output = fopen("../data/abp_processed_output.csv","w");
+	filter(input,output);
+	
     return 0;
 }

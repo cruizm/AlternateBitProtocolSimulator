@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-std=c++17
 
-INCLUDECADMIUM=-I lib\cadmium-master\include
+INCLUDECADMIUM=-I lib\cadmium\include
 
 $(shell mkdir -p build)
 $(shell mkdir -p bin)

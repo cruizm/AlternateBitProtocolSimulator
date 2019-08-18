@@ -1,27 +1,32 @@
+/** \brief A filter function to format the output
+* As input it takes the output files and
+* formats the output for all the files
+*/
+
 #include<string.h>
 #include<stdio.h>
 
 // structure to make a single object as we cant pass
 // arrays as function arguments
 struct merge_line{
-    char line[1000];
+    char line[2000];
 };
 
-// This structure is to read each line from a file fp
+// This structure is to read each line from a file
 // input: File pointer
 // output: the line that the file pointer is pointing.
 struct merge_line readline(FILE *fp){
 
 char ch;
-int counter = 0;
-char line[1000];
+int count = 0;
+char line[2000];
 struct merge_line line2;
 
 while( (ch = getc(fp))!=EOF && ch!='\n' ){
-    line[counter++] = ch;
+    line[count++] = ch;
 }
 
-line[counter] = '\0';
+line[count] = '\0';
 strcpy(line2.line,line);
 return line2;
 
@@ -70,7 +75,7 @@ fp=input;
 out=output;
 char ch;
 char *str;
-int counter = 0;
+int count = 0;
 
 fprintf(out,"time,value,port,component\n");
 
@@ -88,59 +93,59 @@ while(!feof(fp)){
 
 		}
 		else{
-				int counter;
-				for(counter = strlen(l.line)-1;l.line[counter]!=' ';counter--)
+				int count;
+				for(count = strlen(l.line)-1;l.line[count]!=' ';count--)
 						continue;
-				counter++;
+				count++;
 				int i;
-				for (i=0;counter!=strlen(l.line);i++)
-						text3[i] = l.line[counter++];
+				for (i=0;count!=strlen(l.line);i++)
+						text3[i] = l.line[count++];
 				text3[i]='\0';
 
 
-				int colon_counter = 0;
+				int colon_count = 0;
 				for(int i = 0;i<strlen(l.line);i++){
 
 				    if(CheckingChar(l.line[i],'[')|| CheckingChar(l.line[i],',')){
-                        colon_counter=0;
+                        colon_count=0;
                         while(l.line[i]!=':' && l.line[i]!=']' )
                             i++;
                         i--;
 				    }
 				    else if(CheckingChar(l.line[i],':')){
-                        if (colon_counter==0 || colon_counter==1){
-                            colon_counter++;
-                            if (colon_counter==1)
+                        if (colon_count==0 || colon_count==1){
+                            colon_count++;
+                            if (colon_count==1)
                                 i--;
                         }
-                        else if(colon_counter==2){
-                            colon_counter++;
+                        else if(colon_count==2){
+                            colon_count++;
                             i++;
-                            counter = 0;
+                            count = 0;
                             int j = 0;
                             while(l.line[i]!=':'){
-                                text1[counter] = l.line[i];
-                                counter++;
+                                text1[count] = l.line[i];
+                                count++;
                                 i++;
                             }
                             i--;
-                            text1[counter]='\0';
+                            text1[count]='\0';
                         }
-                        else if (colon_counter==3){
+                        else if (colon_count==3){
                             while(l.line[i]!='{')
                                 i++;
                             i--;
-                            colon_counter=0;
+                            colon_count=0;
                         }
                         else{}
 				    }
 				    else if(CheckingChar(l.line[i],'{'))
                     {
                         i++;
-                        counter=0;
+                        count=0;
                         while(l.line[i]!='}')
-                            text2[counter++] = l.line[i++];
-                        text2[counter] = '\0';
+                            text2[count++] = l.line[i++];
+                        text2[count] = '\0';
                         i--;
                         if(text2[0]!='\0'&& text2[0]>9){
                             fprintf(out,"%s,%s,%s,%s\n",time,text2,text1,text3);
