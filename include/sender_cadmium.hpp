@@ -3,8 +3,8 @@
 * ARSLab - Carleton University
 */
 
-#ifndef __BOOST_SIMULATION_PDEVS_SENDER_HPP__
-#define __BOOST_SIMULATION_PDEVS_SENDER_HPP__
+#ifndef __SENDER_CADMIUM_HPP__
+#define __SENDER_CADMIUM_HPP__
 
 #include <cadmium/modeling/ports.hpp>
 #include <cadmium/modeling/message_bag.hpp>
@@ -178,4 +178,4 @@ class Sender{
 };     
 
 
-#endif // __BOOST_SIMULATION_PDEVS_SENDER_HPP__
+#endif // __SENDER_CADMIUM_HPP__
