@@ -25,15 +25,15 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 - main_sender.o
 - main_subnet.o
 - message.o
+- sim_ren.o
 
 **data  [Data files for testing and some simulator outputs]**
-- receiver_input_test.txt
-- receiver_test_output.txt
-- sender_input_test_ack_In.txt
-- sender_input_test_control_In.txt
-- sender_test_output.txt
-- subnet_input_test.txt
-- subnet_test_output.txt
+- abp_output.txt
+- abp_output_0.txt
+- abp_output_1.txt
+- file_mod_output.csv
+- input_abp_0.txt
+- input_abp_1.txt
 
 **doc [This folder contains documents related to ABP and Cadmium including installation guide in winddows and Linux]**
 - alternatebitprot.pdf
@@ -43,28 +43,34 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 **include [This folder contains the header files and data structures used in the project]**
 1. data_structures [This folder has message.hpp file]
     - message.hpp
-- receiverCadmium.hpp
-- senderCadmium.hpp
-- subnetCadmium.hpp
+- receiver_cadmium.hpp
+- sender_cadmium.hpp
+- subnet_cadmium.hpp
+- simulator_renaissance.hpp
 
 **lib [This folder contains 3rd party header files needed in the project]**
 1. cadmium [This folder contains cadmium functionalities]
 2. DESTimes [This folder contains DESTimes functionalities]
--	iestream.hpp
--	NDTime.hpp
+3. Vendor [Other third-party resources]
+  -	iestream.hpp
+
 
 **src [This folder contains source code for the Alternate Bit Protocol simulator]**
 - main.cpp
 - message.cpp
+- simulator_renaissance.cpp
 
 **test [This folder the unit test for the different include files]**
 1. 	data  [Data files used by receiver, sender and subnet]
     -  receiver_input_test.txt
+  - receiver_mod_output.csv
 	- receiver_test_output.txt
 	- sender_input_test_ack_In.txt
 	- sender_input_test_control_In.txt
+  - sender_mod_output.csv
 	- sender_test_output.txt
 	- subnet_input_test.txt
+  - subnet_mod_output.csv
 	-   subnet_test_output.txt
 2. 	src [Contains the source code]
 
