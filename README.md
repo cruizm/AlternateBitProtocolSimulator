@@ -62,7 +62,7 @@ The behavior of receiver is to receive the data and send back an acknowledgement
 
 **test [This folder the unit test for the different include files]**
 1. 	data  [Data files used by receiver, sender and subnet]
-  - receiver_input_test.txt
+  -   receiver_input_test.txt
 	- receiver_test_output.txt
 	- sender_input_test_ack_In.txt
 	- sender_input_test_control_In.txt
