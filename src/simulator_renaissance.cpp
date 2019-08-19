@@ -92,10 +92,12 @@ void output_file_evolution(char input_file[], char output_file[]) {
 	 * otherwise it prints the stated message in else statement.
 	 */
     if (i_d_stream.is_open() && o_d_stream.is_open()) {
-        cout << "Resident Evil 8" << endl;
+        cout << "The real problem is not whether machines " 
+             <<  "think but whether men do." << endl;
 
         /** Writes the strings on the first line of the output file */
-        o_d_stream << "Time" << "," << "Value" << "," << "Port" << "," << "Component" << endl; 
+        o_d_stream << "Time" << "," << "Value" << "," <<
+                      "Port" << "," << "Component" << endl; 
 
         /**
          * While loop runs until the End-of-File is encounterd. i_d_stream.eof() returns true 
@@ -117,14 +119,14 @@ void output_file_evolution(char input_file[], char output_file[]) {
                time = line;
             }else if (line.length() > 12) {
                 string payload = line; /**<  string line is copied to string payload */
-                 /** 
-                  * .find() returns the index of the first occurrence of the substring("[]")
-                  *  in the string (payload) from the start.
-                  *  If the substring is found it returns std::string::npos which means -1. The
-                  *  following if conditional block checks for it, and if the statement becomes true,
-                  *  then the "continue", statement executes, and the code handle returns to while block.
-                  *  Otherwise, the block tries to parse the string for the required pattern.
-                  */
+                /** 
+                 * .find() returns the index of the first occurrence of the substring("[]")
+                 *  in the string (payload) from the start.
+                 *  If the substring is found it returns std::string::npos which means -1. The
+                 *  following if conditional block checks for it, and if the statement becomes true,
+                 *  then the "continue", statement executes, and the code handle returns to while block.
+                 *  Otherwise, the block tries to parse the string for the required pattern.
+                */
                 size_t mes_status = payload.find("[]");
                 if (mes_status != std::string::npos) {
                     continue;

@@ -29,18 +29,22 @@
 #include "../lib/vendor/iestream.hpp"
 
 #include "../include/data_structures/message.hpp"
+#include "../include/simulator_renaissance.hpp"
 
 #include "../include/sender_cadmium.hpp"
 #include "../include/receiver_cadmium.hpp"
 #include "../include/subnet_cadmium.hpp"
-
-//#include "../include/simulator_renaissance.hpp"
 
 
 using namespace std;
 
 using hclock=chrono::high_resolution_clock;
 using TIME = NDTime;
+
+/**Output file path of the receiver test*/
+char output_file[] = "./data/abp_output.txt";
+/**Output file path of the function output_file_evolution*/
+char mod_output_file[] = "./data/file_mod_output.csv";;
 
 
 /**
@@ -107,7 +111,7 @@ int main(int argc, char ** argv){
      * It is storing them during execution time.
      * The file named as abp_output file showing the output data.
      */
-    static std::ofstream out_data("data/abp_output.txt");
+    static std::ofstream out_data(output_file);
 
      /**
      * The structure which is a common sink provider structure 
@@ -309,9 +313,13 @@ int main(int argc, char ** argv){
                    std::ratio<1>>>(hclock::now() - start).count();
     cout << "Simulation took:" << elapsed << "sec" << endl;
 
-    /*char task_file[] = "./data/abp_output.txt";
-    char mod_output_file[] = "./data/file_mod_output.csv";
-    output_file_evolution(task_file, mod_output_file);*/
+    /**
+     * @brief          Function modifies the input file to more readable format 
+     *
+     * @param[in]      input_file   The input file is the ouput file of ABP or test sets
+     * @param[in]      output_file  The output file is modified to more readable format
+     */
+    output_file_evolution(output_file, mod_output_file);
 
     return 0;
 }

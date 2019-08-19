@@ -115,7 +115,7 @@ The same steps should be followed for receiver and subnet tests as we are showin
    - To run the simulation, type in the terminal
    ```./NAME_OF_THE_COMPILED_FILE NAME_OF_THE_INPUT_FILE. ```
    For this test you need to type:
-		```./bin/ABP ../data/input_abp_1.txt```
+		```./bin/ABP data/input_abp_1.txt```
    - To check the output of the simulation, open  "abp_output.txt"
    - To execute the simulator with different inputs
 		- Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
