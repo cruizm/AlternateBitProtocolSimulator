@@ -14,10 +14,11 @@
 #include <cadmium/logger/common_loggers.hpp>
 
 
-#include "../../../lib/NDTime.hpp"
-#include "../../../lib/iestream.hpp"
+#include "../../../lib/DESTimes/include/NDTime.hpp"
+#include "../../../lib/vendor/iestream.hpp"
 
 #include "../../../include/data_structures/message.hpp"
+#include "../../../include/simulator_renaissance.hpp"
 
 #include "../../../include/sender_cadmium.hpp"
 
@@ -53,7 +54,7 @@ int main(){
   auto start = hclock::now(); //to measure simulation execution time
 
 /*************** Loggers *******************/
-  static std::ofstream out_data("../test/data/sender_test_output.txt");
+  static std::ofstream out_data("test/data/sender_test_output.txt");
     struct oss_sink_provider{
         static std::ostream& sink(){          
             return out_data;
@@ -79,12 +80,12 @@ using logger_top=cadmium::logger::multilogger<log_messages, global_time>;
 /********************************************/
 /****** APPLICATION GENERATOR *******************/
 /********************************************/
-string input_data_control = "../../data/sender_input_test_control_In.txt";
+string input_data_control = "test/data/sender_input_test_control_In.txt";
 const char * i_input_data_control = input_data_control.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_con = cadmium::dynamic::translate::make_dynamic_atomic_model<ApplicationGen, TIME, const char* >("generator_con" , std::move(i_input_data_control));
 
-string input_data_ack = "../../data/sender_input_test_ack_In.txt";
+string input_data_ack = "test/data/sender_input_test_ack_In.txt";
 const char * i_input_data_ack = input_data_ack.c_str();
 
 std::shared_ptr<cadmium::dynamic::modeling::model> generator_ack = cadmium::dynamic::translate::make_dynamic_atomic_model<ApplicationGen, TIME, const char* >("generator_ack" , std::move(i_input_data_ack));
