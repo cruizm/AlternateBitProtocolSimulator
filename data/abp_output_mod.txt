@@ -1,0 +1,10 @@
+
+The total number of packets sent, dataOut = 21.000000
+
+The total number of acknowledgements received, ackReceivedOut = 20.000000
+
+The total number of packets generated, packetSentOut= 21.000000
+
+The total number of packets lost = 1.000000
+
+The percentage of packets that are lost = 5%

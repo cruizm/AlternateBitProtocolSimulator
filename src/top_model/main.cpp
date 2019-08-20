@@ -27,6 +27,7 @@
 #define MAIN_OUTPUT "../data/abp_output.txt"
 
 #include "../organize.cpp"
+#include "../modification.cpp"
 
 
 using namespace std;
@@ -220,6 +221,12 @@ std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> TOP = std::make_share
 	input = fopen("../data/abp_output.txt","r");
 	output = fopen("../data/abp_processed_output.csv","w");
 	filter(input,output);
+	
+	FILE *input2;
+	FILE *output2;
+	input2 = fopen("../data/abp_processed_output.csv","rb");
+	output2 = fopen("../data/abp_output_mod.txt","w");
+	filter2(input2,output2);
 	
     return 0;
 }
