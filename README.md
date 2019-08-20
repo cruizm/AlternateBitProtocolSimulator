@@ -26,25 +26,23 @@
 #### **Sender**-  It sends the packet and then waits for acknowledgement from the receiver but if it does not receive the acknowledgement within time window it will resend the packet with alternating bit attached to it so that it can differentiate between the two packets. Once it receives the acknowledgement it will send the next packet until it has no more packets to send.
 ---
 ### File Management
-1. src [This folder contains the source code for the message and top model]
+1. src [This folder contains the source code for the message and top model, organize.cpp and modification.cpp for modifying the output]
 2. data_structures [Contains the source code for the top message]
 3. top_model [Contains the source code for the top_model]
 4. lib [This folder contains the third party header files]
-5. vendor[This folder contains 3rd party header files needed in the project]
    
-   5.1 iestream.hpp
+   4.1 cadmium [contains cadmium files]
    
-   5.2 NDTime.hpp
+   4.2 DESTimes [contains destimes files]
    
-   5.3 cadmium-master[contains cadmium files]
+   4.3 vendor[This folder contains 3rd party header files needed in the project]
    
-   5.4 DESTimes-master[contains destimes files]
-	
+   
 ### include [This folder contains the header files used]
 	1. atomics
-		1.1 receiverCadmium.hpp
-		1.2 senderCadmium.hpp
-		1.3 subnetCadmium.hpp
+		1.1 receiver_cadmium.hpp
+		1.2 sender_cadmium.hpp
+		1.3 subnet_cadmium.hpp
 	2. data_structures [contains message header file]
 		2.1 message.hpp
 		
@@ -58,13 +56,13 @@
 2. src [This folder contains the source code for the sender,receiver and subnet]
 		
 		2.1 receiver[This folder contains the source code for the receiver]
-			main.cpp
+			recv_main.cpp
 			
 		2.2 sender[This folder contains the source code for the sender]
-			main.cpp
+			send_main.cpp
 			
 		2.3 subnet[This folder contains the source code for the subnet]
-			main.cpp
+			sub_main.cpp
 			
 3. doc [contains documents related to the project]
 
@@ -73,6 +71,8 @@
 	2. input_abp_1.txt
 	3. abp_output_0.txt
 	4. abp_output_1.txt
+	5. abp_processed_output.csv
+	
 ### makefile [make file to compile the project]
 	
 ### Steps to Run Simulation
@@ -109,11 +109,15 @@
 
 5. To check the output of the simulation, open  "data/abp_output.txt"
 
-6. To execute the simulator with different inputs
+6. To chech the modified output of the simulator, open "data/abp_processed_output.csv"
 
- 6.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
+7. To check the percentage of packets lost, open "data/abp_output_mod.txt"
+
+8. To execute the simulator with different inputs
+
+ 8.1. Create new .txt files with the same structure as input_abp_0.txt or input_abp_1.txt
  
- 6.2. Run the simulator using the instructions in step 4
+ 8.2. Run the simulator using the instructions in step 4
  
- 6.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
+ 8.3. If you want to keep the output, rename abp_output.txt. To do so, type in the terminal: "mv abp_output.txt NEW_NAME"
 >		         Example: mv abp_output.txt abp_output_0.txt
