@@ -27,14 +27,14 @@ using TIME = NDTime;
 
 /***** SETING INPUT PORTS FOR COUPLEDs *****/
 
-struct inp_controll : public cadmium::in_port<Message_t>{};
-struct inp_ack : public cadmium::in_port<Message_t>{};
+struct inp_controll : public cadmium::in_port<message_t>{};
+struct inp_ack : public cadmium::in_port<message_t>{};
 
 /***** SETING OUTPUT PORTS FOR COUPLEDs *****/
 
-struct outp_ack : public cadmium::out_port<Message_t>{};
-struct outp_data : public cadmium::out_port<Message_t>{};
-struct outp_pack : public cadmium::out_port<Message_t>{};
+struct outp_ack : public cadmium::out_port<message_t>{};
+struct outp_data : public cadmium::out_port<message_t>{};
+struct outp_pack : public cadmium::out_port<message_t>{};
 
 
 /********************************************/
@@ -42,11 +42,11 @@ struct outp_pack : public cadmium::out_port<Message_t>{};
 /********************************************/
 
 template<typename T>
-class ApplicationGen : public iestream_input<Message_t,T> {
+class ApplicationGen : public iestream_input<message_t,T> {
     public:
     ApplicationGen() = default;
     ApplicationGen(const char* file_path) : 
-    iestream_input<Message_t,T>(file_path) {}
+    iestream_input<message_t,T>(file_path) {}
 };
 
 
@@ -147,10 +147,10 @@ cadmium::dynamic::modeling::EOCs eocs_TOP = {
 
 cadmium::dynamic::modeling::ICs ics_TOP = {
   cadmium::dynamic::translate::
-  make_IC<iestream_input_defs<Message_t>::
+  make_IC<iestream_input_defs<message_t>::
   out,sender_defs::controlIn>("generator_con","sender1"),
   cadmium::dynamic::translate::
-  make_IC<iestream_input_defs<Message_t>::
+  make_IC<iestream_input_defs<message_t>::
   out,sender_defs::ackIn>("generator_ack","sender1")
 };
 

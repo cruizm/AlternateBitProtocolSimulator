@@ -28,15 +28,15 @@ using namespace std;
 
 //Port definition
     struct sender_defs{
-        struct packetSentOut : public out_port<Message_t> {
+        struct packetSentOut : public out_port<message_t> {
         };
-        struct ackReceivedOut : public out_port<Message_t> {
+        struct ackReceivedOut : public out_port<message_t> {
         };
-        struct dataOut : public out_port<Message_t> {
+        struct dataOut : public out_port<message_t> {
         };
-        struct controlIn : public in_port<Message_t> {
+        struct controlIn : public in_port<message_t> {
         };
-        struct ackIn : public in_port<Message_t> {
+        struct ackIn : public in_port<message_t> {
         };
     };
 
@@ -143,7 +143,7 @@ using namespace std;
             // output function
             typename make_message_bags<output_ports>::type output() const {
               typename make_message_bags<output_ports>::type bags;
-              Message_t out;
+              message_t out;
               if (state.sending){
                 out.value = state.packetNum * 10 + state.alt_bit;
                 get_messages<typename defs::dataOut>(bags).push_back(out);
